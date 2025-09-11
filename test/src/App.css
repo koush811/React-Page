@@ -9,15 +9,30 @@
 }
 
 header{
-  background-color: #ff5f5f;
+  background-color: #a1a1a1;
   width: 100%;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+header a{
+  padding: 10px;
 }
 
 .swiper {
-  width: 100%;
+  padding: 30px;
+  width: 80%;
   height: 500px;
+  border: solid 3px black;
 }
 .swiper-pagination{
   position: absolute;
+  
+}
+.SwiperSlide1{
+  font-size: 300%;
+  display: flex;
+  justify-content: center;
   
 }

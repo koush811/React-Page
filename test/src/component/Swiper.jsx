@@ -4,6 +4,8 @@ import 'swiper/css';
 import 'swiper/css/effect-cube';
 import 'swiper/css/pagination';
 import { Pagination, EffectCube, Navigation } from 'swiper/modules';
+import { Link } from "react-router-dom"
+import { ROUTES } from "../url/u"
 
 function MySwiper() {
   const swiperRef = useRef(null);
@@ -15,8 +17,9 @@ function MySwiper() {
         modules={[Pagination, EffectCube, Navigation]}
         spaceBetween={30}
         slidesPerView={1}
-        pagination={{ clickable: true, type: "fraction" }}
+        
         navigation
+        loop="true"
         effect="cube"
         centeredSlides={true}
         onSlideChange={() => console.log("change")}
@@ -24,11 +27,21 @@ function MySwiper() {
           swiperRef.current = swiper;
         }}
       >
-        {data.map((d, i) => (
-          <SwiperSlide key={i}>
-            <div>{d}</div>
+        
+        <Swiper slidesPerView={1}>
+          <SwiperSlide className='SwiperSlide1'>
+            <Link to={ROUTES.TETO}>
+              teto
+            </Link>   
           </SwiperSlide>
-        ))}
+          <SwiperSlide className='SwiperSlide2'>
+            <div>スライド2</div>
+          </SwiperSlide>
+          <SwiperSlide className='SwiperSlide3'>
+            <div>スライド3</div>
+          </SwiperSlide>
+        </Swiper>
+
       </Swiper>
       <button onClick={() => swiperRef.current?.slidePrev()}>Prev</button>
       <button onClick={() => swiperRef.current?.slideNext()}>Next</button>
