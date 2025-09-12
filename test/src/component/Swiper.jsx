@@ -6,10 +6,17 @@ import 'swiper/css/pagination';
 import { Pagination, EffectCube, Navigation } from 'swiper/modules';
 import { Link } from "react-router-dom"
 import { ROUTES } from "../url/u"
+import tetoImg from "../img/teto.jpg";
+import oipImg from "../img/OIP.jpg";
+
 
 function MySwiper() {
-  const swiperRef = useRef(null);
-  const data = ["slide1", "slide2", "slide3", "slide4", "slide5"];
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const imgs = [
+  tetoImg,
+  oipImg
+  ];
 
   return (
     <>
@@ -17,34 +24,39 @@ function MySwiper() {
         modules={[Pagination, EffectCube, Navigation]}
         spaceBetween={30}
         slidesPerView={1}
-        
-        navigation
-        loop="true"
+        loop={true}
         effect="cube"
+        
         centeredSlides={true}
-        onSlideChange={() => console.log("change")}
-        onBeforeInit={(swiper) => {
-          swiperRef.current = swiper;
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onInit={(swiper) => {
+          setTimeout(() => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.navigation.destroy();
+            swiper.navigation.init();
+            swiper.navigation.update();
+          });
         }}
       >
-        
-        <Swiper slidesPerView={1}>
-          <SwiperSlide className='SwiperSlide1'>
-            <Link to={ROUTES.TETO}>
-              teto
-            </Link>   
+        {imgs.map((img, i) => (
+          <SwiperSlide key={i} className='swiper-slide'>
+            <img src={img} alt="" />
+            <Link to={ROUTES.TETO}>teto</Link>
           </SwiperSlide>
-          <SwiperSlide className='SwiperSlide2'>
-            <div>スライド2</div>
-          </SwiperSlide>
-          <SwiperSlide className='SwiperSlide3'>
-            <div>スライド3</div>
-          </SwiperSlide>
-        </Swiper>
-
+        ))}
+        <SwiperSlide className='swiper-slide'>
+          <h1>3</h1>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+            <h1>4</h1>
+        </SwiperSlide>
       </Swiper>
-      <button onClick={() => swiperRef.current?.slidePrev()}>Prev</button>
-      <button onClick={() => swiperRef.current?.slideNext()}>Next</button>
+      <div ref={prevRef} className="pbtn">Prev</div>
+      <div ref={nextRef} className="nbtn">Next</div>
     </>
   );
 }
