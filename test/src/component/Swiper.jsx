@@ -45,7 +45,9 @@ function MySwiper() {
         {imgs.map((img, i) => (
           <SwiperSlide key={i} className='swiper-slide'>
             <img src={img} alt="" />
-            <Link to={ROUTES.TETO}>teto</Link>
+            <p>aaaaaaaaaaaaaaaaaaaa<br/>
+            aaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <Link className="link"to={ROUTES.TETO}>ゲーム画面へ</Link>
           </SwiperSlide>
         ))}
         <SwiperSlide className='swiper-slide'>
