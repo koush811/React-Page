@@ -76,4 +76,6 @@ html, body, #root {
 .nbtn{
   right: 80px;
 }
-
+.title{
+  color: black;
+}

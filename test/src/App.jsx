@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ROUTES } from './url/u'
-import Teto from './pages/teto'
+import Teto from './pages/tetopage/Teto'
 import Home from './pages/home'
 import './App.css'
 import './index.css'
