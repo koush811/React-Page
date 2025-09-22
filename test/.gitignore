@@ -7,6 +7,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 node_modules
+"C:\stem\react\README.md"
+"C:\stem\react\@.cmd"
+"C:\stem\react\CHANGELOG.md"
+"C:\stem\react\corepack"
+"C:\stem\react\corepack.cmd"
+"C:\stem\react\install_tools.bat"
+"C:\stem\react\LICENSE"
+"C:\stem\react\node.exe"
+"C:\stem\react\nodevars.bat"
+"C:\stem\react\npm"
+"C:\stem\react\npm.cmd"
+"C:\stem\react\npm.ps1"
+"C:\stem\react\npx"
+"C:\stem\react\npx.cmd"
+"C:\stem\react\npx.ps1"
 
 dist
 dist-ssr
