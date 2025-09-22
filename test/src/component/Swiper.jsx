@@ -8,6 +8,8 @@ import { Link } from "react-router-dom"
 import { ROUTES } from "../url/u"
 import tetoImg from "../img/teto.jpg";
 import oipImg from "../img/OIP.jpg";
+import oseroImg from "../img/osero.jpg"
+import gandam from "../img/gandam.jpg";
 
 
 function MySwiper() {
@@ -15,7 +17,9 @@ function MySwiper() {
   const nextRef = useRef(null);
   const imgs = [
   tetoImg,
-  oipImg
+  oipImg,
+  oseroImg,
+  gandam
   ];
 
   return (
@@ -42,21 +46,21 @@ function MySwiper() {
           });
         }}
       >
-        {imgs.map((img, i) => (
-          <SwiperSlide key={i} className='swiper-slide'>
-            <img src={img} alt="" />
-            <p>aaaaaaaaaaaaaaaaaaaa<br/>
-            aaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <Link className="link"to={ROUTES.TETO}>ゲーム画面へ</Link>
-          </SwiperSlide>
-        ))}
         <SwiperSlide className='swiper-slide'>
-          <h1>3</h1>
+          <img src={imgs[0]} alt="" />
+          <Link className="link"to={ROUTES.TETO}>紹介ページへ</Link>
         </SwiperSlide>
         <SwiperSlide className='swiper-slide'>
-            <h1>4</h1>
+          <img src={imgs[2]} alt="" />
+          <Link className="link"to={ROUTES.OSERO}>紹介ページへ</Link>
         </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+          <img src={imgs[3]} alt="" />
+          <Link className="link"to={ROUTES.GANDAM}>紹介ページへ</Link>
+        </SwiperSlide>
+        
       </Swiper>
+      
       <div ref={prevRef} className="pbtn">Prev</div>
       <div ref={nextRef} className="nbtn">Next</div>
     </>
