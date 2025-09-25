@@ -1,0 +1,23 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ROUTES } from './url/u'
+import Teto from './pages/tetopage/Teto'
+import Home from './pages/home'
+import './App.css'
+import './index.css'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.TETO} element={<Teto />} />
+      </Routes>
+    </BrowserRouter>
+    
+    
+  )
+  
+}
+export default App
+
+
